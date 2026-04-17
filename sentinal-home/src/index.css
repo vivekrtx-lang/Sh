@@ -8,7 +8,7 @@
 }
 
 @utility scanline {
-  @apply absolute w-full h-[2px] pointer-events-none;
+  @apply absolute w-full h-0.5 pointer-events-none;
   background: linear-gradient(to right, transparent, rgba(0, 255, 255, 0.2), transparent);
   animation: scan 4s linear infinite; /* [cite: 131] */
 }
