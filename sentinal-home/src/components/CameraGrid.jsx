@@ -17,10 +17,11 @@ export default function CameraGrid({ alertActive }) {
       name: "Living Room",
       img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80",
     },
+    // Updated stable Hallway link
     {
       id: "CAM_04",
       name: "Hallway",
-      img: "https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?auto=format&fit=crop&w=400&q=80",
+      img: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=400&q=80",
     },
   ];
 

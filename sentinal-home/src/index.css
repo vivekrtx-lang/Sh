@@ -1,27 +1,45 @@
 @import "tailwindcss";
 
-/* Wrap your custom classes in @utility to tell Tailwind v4 
-   to process these as functional classes */
-@utility glass-panel {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); /* [cite: 150] */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --cyan-glow: rgba(0, 255, 255, 0.2);
 }
 
-@utility scanline {
-  @apply absolute w-full h-0.5 pointer-events-none;
-  background: linear-gradient(to right, transparent, rgba(0, 255, 255, 0.2), transparent);
-  animation: scan 4s linear infinite; /* [cite: 131] */
+body {
+  background-color: #0a0c10;
+  color: #e2e8f0;
+  overflow-y: auto; /* Allows vertical scrolling only when needed */
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
 }
 
-@layer base {
-  body {
-    /* Use 'Midnight Blue' or 'Deep Grey' as per Sentinel Home rules */
-    @apply bg-[#0a0c10] text-slate-200 overflow-hidden; /* [cite: 148, 149] */
-    font-family: 'Inter', sans-serif; /* [cite: 151] */
-  }
+/* Replaces @utility glass-panel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Replaces @utility scanline */
+.scanline {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, var(--cyan-glow), transparent);
+  animation: scan 4s linear infinite;
 }
 
 @keyframes scan {
   0% { top: 0; }
   100% { top: 100%; }
+}
+
+/* Monospace for numbers/data */
+.font-mono {
+  font-family: 'Roboto Mono', ui-monospace, monospace;
 }
